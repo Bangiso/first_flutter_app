@@ -37,15 +37,8 @@ class BooksState extends State<BooksWidget> {
       } else {
         bookNew.isFavorite = false;
         favs.remove(bookNew);
-        Fluttertoast.showToast(
-            msg: 'Book removed to favourites',
-            toastLength: Toast.LENGTH_SHORT,
-            gravity: ToastGravity.CENTER,
-            timeInSecForIosWeb: 1,
-            textColor: Colors.white,
-            fontSize: 20.0);
-        }
-        });
+      }
+    });
   }
 
   @override
