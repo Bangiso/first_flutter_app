@@ -8,22 +8,23 @@ import 'AddBookWidget.dart';
 import 'ProfileWidget.dart';
 
 class MyHomePageState extends State<MyHomePage> {
-  MyHomePageState(Key? key);
+  MyHomePageState({Key? key});
 
   static const String title = 'My Books';
   int _selectedIndex = 0;
   late BooksService booksService;
   late List<Book> favs;
 
-
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
-  Widget _getFavs(List<Book> favs){
-    if(favs.isEmpty){
-      return const Center( child: Text(  "No books yet, your favourite books will appear here!"));
+
+  Widget _getFavs(List<Book> favs) {
+    if (favs.isEmpty) {
+      return const Center(
+          child: Text("No books yet, your favourite books will appear here!"));
     } else {
       return GridView.count(
           primary: false,
@@ -33,11 +34,11 @@ class MyHomePageState extends State<MyHomePage> {
           crossAxisCount: 2,
           children: favs
               .map((e) => Container(
-            padding: const EdgeInsets.all(5),
-            child: BooksWidget(e, favs), ))
+                    padding: const EdgeInsets.all(5),
+                    child: BooksWidget(book: e, favs: favs, key: UniqueKey()),
+                  ))
               .toList());
     }
-
   }
 
   @override
@@ -129,7 +130,11 @@ class MyHomePageState extends State<MyHomePage> {
                   .getBooks()
                   .map((book) => Container(
                       padding: const EdgeInsets.all(5),
-                      child: BooksWidget(book, favs)))
+                      child: BooksWidget(
+                        book: book,
+                        favs: favs,
+                        key: UniqueKey(),
+                      )))
                   .toList()),
           _getFavs(favs),
           AddBookWidget(booksService)
