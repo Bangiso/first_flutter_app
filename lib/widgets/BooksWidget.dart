@@ -30,7 +30,7 @@ class BooksState extends State<BooksWidget> {
         Fluttertoast.showToast(
             msg: 'Book added to favourites',
             toastLength: Toast.LENGTH_SHORT,
-            gravity: ToastGravity.CENTER,
+            gravity: ToastGravity.BOTTOM,
             timeInSecForIosWeb: 1,
             textColor: Colors.white,
             fontSize: 20.0);

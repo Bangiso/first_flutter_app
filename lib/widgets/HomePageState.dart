@@ -91,7 +91,7 @@ class MyHomePageState extends State<MyHomePage> {
                 Fluttertoast.showToast(
                     msg: "This functionality is not implemented yet.",
                     toastLength: Toast.LENGTH_LONG,
-                    gravity: ToastGravity.CENTER,
+                    gravity: ToastGravity.BOTTOM,
                     timeInSecForIosWeb: 1,
                     textColor: Colors.white,
                     fontSize: 20.0);

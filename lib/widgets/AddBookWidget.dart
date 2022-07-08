@@ -89,7 +89,7 @@ class AddBookWidget  extends StatelessWidget {
                               Fluttertoast.showToast(
                                   msg: "Book with ISBN ${isbnController.text.toString()} added",
                                   toastLength: Toast.LENGTH_LONG,
-                                  gravity: ToastGravity.CENTER,
+                                  gravity: ToastGravity.BOTTOM,
                                   timeInSecForIosWeb: 1,
                                   textColor: Colors.white,
                                   fontSize: 20.0);
