@@ -24,7 +24,9 @@ class MyHomePageState extends State<MyHomePage> {
   Widget _getFavs(List<Book> favs) {
     if (favs.isEmpty) {
       return const Center(
-          child: Text("No books yet, your favourite books will appear here!"));
+          child: Text("No books yet, your favourite books will appear here!", style: TextStyle(fontWeight:
+          FontWeight.normal,
+              fontSize: 25)));
     } else {
       return GridView.count(
           primary: false,
