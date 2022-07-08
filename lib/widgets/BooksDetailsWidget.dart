@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:first_flutter_app/models/Book.dart';
 
 class BooksDetailsWidget extends StatelessWidget {
-  BooksDetailsWidget(Key? key, this.book) : super(key: key);
-  final Book book;
+   const BooksDetailsWidget(this.book, {Key? key}) : super(key: key);
+   final Book book;
 
   @override
   Widget build(BuildContext context) {
