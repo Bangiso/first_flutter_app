@@ -6,6 +6,7 @@ import 'package:first_flutter_app/widgets/MyHomePage.dart';
 import '../models/Book.dart';
 import 'AddBookWidget.dart';
 import 'ProfileWidget.dart';
+import 'SearchWidget.dart';
 
 class MyHomePageState extends State<MyHomePage> {
   MyHomePageState({Key? key});
@@ -56,7 +57,19 @@ class MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text(title), centerTitle: true),
+      appBar: AppBar(title: const Text(title), centerTitle: true,
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.search),
+          onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>  SearchWidget(booksService.getBooks(), key: UniqueKey(),)),
+            );
+          },
+        )
+      ],),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,

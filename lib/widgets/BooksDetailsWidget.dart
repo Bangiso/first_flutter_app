@@ -26,9 +26,10 @@ class BooksDetailsWidget extends StatelessWidget {
     return Card(
         child:
         SizedBox(
-            width: 300,
-            height: 150,
+            // width: 300,
+            height: 100,
             child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(keyHeader, style: const TextStyle(fontWeight:
