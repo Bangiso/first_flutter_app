@@ -45,6 +45,12 @@ class SearchState extends State<SearchWidget> {
       ]);
     }
   }
+  void _onSubmit(){
+    setState(() {
+      keyWord = titleController.text.toString();
+      titleController.clear();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,15 +64,14 @@ class SearchState extends State<SearchWidget> {
           child: Center(
             child: TextField(
               controller: titleController,
+              onEditingComplete: (){
+                _onSubmit();
+              },
               decoration: InputDecoration(
-                  // prefixIcon: Icon(Icons.search),
                   suffixIcon: IconButton(
                     icon: Icon(Icons.search),
                     onPressed: () {
-                      setState(() {
-                        keyWord = titleController.text.toString();
-                        titleController.clear();
-                      });
+                      _onSubmit();
                     },
                   ),
                   hintText: ' Search...',
